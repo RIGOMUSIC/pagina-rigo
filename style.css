@@ -1,91 +1,245 @@
 @font-face {
+    font-family: 'Robot Rebels';
+    src: url(./extra/Robot\ Rebels.otf);
+}
+
+@font-face {
+    font-family: 'Fast Hand';
+    src: url(./extra/Fast\ Hand.otf);
+}
+
+@font-face {
     font-family: 'Yamaka';
     src: url(./extra/Yamaka\ Personal\ Used.otf);
 }
 
-.rigo-logo{
-    width: 300px;
-    margin-left: 4%;
-}
-
-.img-header{
-    height: 50px;
-}
-
-.rigo-logo-container{
-    width: 96%;
-    margin-top: 3vh;
-}
-
-.social-media-container{
-    width: 70px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    background-color: rgba(78, 77, 77, 0.368);
-    border-radius: 0px 0px 10px 10px;
-}
-
-.container-header{
-    display: flex;
+@font-face {
+    font-family: "Besley", serif;
+    src: url(./extra/Besley-VariableFont_wght.ttf);
 }
 
 .bg-container{
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    width: 100%;
-    min-height: 1000px;
-    max-height: 1012px;
     position: absolute;
     z-index: -1;
     overflow: hidden;
-    justify-content: center;
-}
-
-.rigo-bg{
-    position: relative;
-    bottom: 70px;
-    width: 100vw;
-    height: fit-content;
-}
-
-footer {
-    margin-top: 612px;
-    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    height: 100px;
 }
 
-p{
+.rigo-background{
+    min-width: 1500px;
+    width: 100%;
+    height: 120%;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    width:  100vw;
+    height: 100vh;
+}
+
+.container1, .main-container, .music-dropdown-container, .music-dropdown{
+    display: flex;
+    overflow: hidden;
+}
+
+.container1{
+    overflow: hidden;
+    min-height: fit-content;
+    justify-content: center;
+    height: 100vh;
+    width: 40%;
+}
+
+.music-dropdown-container{
+    width: 60%;
+    flex-direction: column;
+}
+
+.apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown{
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.bestie-cover{
+    max-width: 270px;
+    border-radius: 20px;
+    margin-top: -51px;
+}
+
+.bestie-texto{
+    letter-spacing: 10px;
+    color: rgb(32, 31, 31);
+    text-shadow: 5px 3px rgb(86, 86, 86);
+    height: fit-content;
+    width: fit-content;
+    opacity: 100%;
     font-family: 'Yamaka';
-}
-footer > p {
-    margin-top: 14px;
-    color: rgb(145, 145, 145);
-}
-
-@media (max-width:1900px){
-    .rigo-bg{
-        width: 1920px;
-    }
+    font-size: 55px;
+    margin-right: -10px;
+    margin-bottom: 39px;
 }
 
-@media (max-width:800px){
-    .rigo-bg{
-        width: 1720px;
+.presave-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: rgba(60, 60, 60, 0.568);
+    margin-top: 20vh;
+    border: 4px solid rgba(129, 129, 129, 0.634);
+    transform: scale(1.5);
+    transition: box-shadow 0.2s ease-in-out, transform 0.3s ease-in-out, background-color 0.1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.presave-container:hover{
+    background-color: rgba(60, 60, 60, 0.797);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
+    transform: scale(1.7);
+}
+
+.presave-mobile{
+    width: 300px;
+    height: fit-content;
+    transform: scale(0);
+    background-color: rgba(60, 60, 60, 0.797);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
+    margin: 0px 20px 20px 0px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(129, 129, 129, 0.634);
+    opacity: 0%;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.presave-mobile-container{
+    height: 100%; 
+    display: flex; 
+    align-items: end; 
+    justify-content: end;
+}
+
+.presave-button{
+    width: 90%;
+    height: 62px;
+    display: flex;
+    flex-direction: row;
+    font-family: "Yamaka";
+    font-size: 20px;
+    letter-spacing: 3px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: rgba(45, 45, 45, 0.982);
+    background-color: rgba(255, 255, 255, 0.797);
+    transition: opacity 4s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: background-color 0.1s ease-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+.presave-button:hover{
+    background-color: rgba(17, 172, 6, 0.797);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
+    color: rgb(226, 226, 226);
+    text-shadow: 2px 2px rgb(42, 42, 42);
+}
+
+.presave-platforms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-right: 10px;
+}
+
+.presave-platforms > img{
+    height: 35px
+}
+
+.presale-text{
+    padding-top: 1px;
+    height: 100%;
+}
+
+
+.music-dropdown > a{
+    width: 80%;
+}
+
+a > img{
+    width: 100%;
+}
+
+#timer{
+    margin: 0;
+    color: rgba(59, 59, 59, 0.96);
+    font-size: 27px;
+    font-family: 'Yamaka';
+    height: 35px;
+    transition: font-size 0.3s ease-in-out, text-shadow 0.3s ease-in-out, color 1s ease-in-out, border-bottom 2s ease-in-out;
+}
+
+.music-dropdown{
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-right: 20px;
+    gap: 20px;
+    padding: 5px 0px 10px 0px;
+    max-height: 65px;
+    width: 60px;
+    background-color: rgba(33, 33, 33, 0.63);
+    border-radius: 0px 0px 30px 30px;
+    transition: max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.music-dropdown:hover{
+    .apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown{
+        transform: scale(1);
     }
-    .rigo-logo{
-        width: 200px;
+    max-height: 400px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
+}
+
+body {
+    background-image: url(./imges/Diseño\ sin\ título.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width:1705px){
+    .presave-container{
+        transform: scale(1);
     }
-    .img-header{
-        height: 37px;
+    .presave-container:hover{
+        transform: scale(1.2);
     }
-    .social-media-container{
-        margin-right: 2%;
-        height: 330px;
+}
+
+@media (max-width: 1244px){
+    .presave-container{
+        transform: scale(0);
+        opacity: 0%;
+    }
+    
+    .presave-mobile{
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
+@media (max-width: 700px){    
+    .presave-mobile{
+        transform: scale(0.9);
     }
 }
