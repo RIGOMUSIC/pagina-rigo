@@ -50,13 +50,14 @@
 .container1{
     overflow: hidden;
     min-height: fit-content;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
-    width: 40%;
+    width: 60%;
 }
 
 .music-dropdown-container{
-    width: 60%;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -69,6 +70,10 @@
     max-width: 270px;
     border-radius: 20px;
     margin-top: -51px;
+}
+
+.social-media-container{
+    height: fit-content;
 }
 
 .bestie-texto{
@@ -91,8 +96,8 @@
     align-items: center;
     height: fit-content;
     border-radius: 20px;
-    background-color: rgba(60, 60, 60, 0.568);
     margin-top: 20vh;
+    background-color: rgba(60, 60, 60, 0.568);
     border: 4px solid rgba(129, 129, 129, 0.634);
     transform: scale(1.5);
     transition: box-shadow 0.2s ease-in-out, transform 0.3s ease-in-out, background-color 0.1s ease-in-out, opacity 1s ease-in-out;
@@ -110,7 +115,7 @@
     transform: scale(0);
     background-color: rgba(60, 60, 60, 0.797);
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
-    margin: 0px 20px 20px 0px;
+    margin: 0px 0px 20px 30%;
     border-radius: 60px;
     display: flex;
     flex-direction: column;
@@ -124,8 +129,10 @@
 .presave-mobile-container{
     height: 100%; 
     display: flex; 
+    width: 50%;
     align-items: end; 
-    justify-content: end;
+    justify-content: center;
+    transition: margin-left 1s ease-in-out;
 }
 
 .presave-button{
@@ -192,14 +199,26 @@ a > img{
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    margin-right: 20px;
     gap: 20px;
     padding: 5px 0px 10px 0px;
+    margin-right: 20px;
     max-height: 65px;
     width: 60px;
     background-color: rgba(33, 33, 33, 0.63);
     border-radius: 0px 0px 30px 30px;
     transition: max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.social-media-upper{
+    display: flex;
+    gap: 10px;
+    background-color: rgba(128, 128, 128, 0.5);
+    height: 60px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-out;
+    width: 0px;
 }
 
 .music-dropdown:hover{
@@ -217,6 +236,40 @@ body {
     background-position: center;
 }
 
+.social-media{
+    display: flex;
+    gap: 10px;
+    margin-left: 20%;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-out;
+    transform: scale(1.2);
+}
+
+.social-media:hover,.social-media-upper:hover{
+    background-color: rgba(128, 128, 128, 0.916);
+    box-shadow:  1px 1px 6px 6px rgba(0, 0, 0, 0.501);
+}
+
+.social-media-container-bottom{
+    display: flex; 
+    width: 50%;
+    align-items: end;
+}
+
+.social-media > a > img, .social-media-upper > a > img {
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media,.social-media-upper > a > img:hover{
+    transform: scale(1.2);
+}
+
 @media (max-width:1705px){
     .presave-container{
         transform: scale(1);
@@ -226,21 +279,56 @@ body {
     }
 }
 
-@media (max-width: 1244px){
+@media (max-width: 1344px){
     .presave-container{
         transform: scale(0);
         opacity: 0%;
+    }
+
+    .container1{
+        width: 0px;
     }
     
     .presave-mobile{
         transform: scale(1);
         opacity: 100%;
     }
+
+    .social-media{
+        width: 0px;
+    }
+
+    .social-media-upper{
+        width: 200px;
+    }
 }
 
 @media (max-width: 962px){    
     .presave-mobile{
         transform: scale(0.7);
-        margin: 0px -40px -40px 0px;
+        margin: 0px;
     }
+
+    .presave-mobile-container{
+        width: 100%;
+    }
+
+    .social-media-container-bottom{
+        width: 0px;
+        height: 0px;
+    }
+
+    .music-dropdown-container{
+        width: 100%;
+    }
+
+    .apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown{
+        transform: scale(1);
+    }
+
+    .music-dropdown{
+        max-height: 400px;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
+    }
+   
 }
