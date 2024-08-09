@@ -305,7 +305,7 @@ body {
 
 @media (max-width: 962px){    
     .presave-mobile{
-        transform: scale(0.7);
+        transform: scale(0.6);
         margin: 0px;
     }
 
