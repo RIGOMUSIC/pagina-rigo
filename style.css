@@ -221,14 +221,6 @@ a > img{
     width: 0px;
 }
 
-.music-dropdown:hover{
-    .apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown{
-        transform: scale(1);
-    }
-    max-height: 400px;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
-}
-
 body {
     background-image: url(./imges/Diseño\ sin\ título.png);
     background-repeat: no-repeat;
@@ -303,6 +295,16 @@ body {
     }
 }
 
+@media (min-width: 963px) {
+    .music-dropdown:hover{
+        .apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown{
+            transform: scale(1);
+        }
+        max-height: 400px;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
+    }   
+}
+
 @media (max-width: 962px){    
     .presave-mobile{
         transform: scale(0.6);
@@ -318,17 +320,24 @@ body {
         height: 0px;
     }
 
+    .social-media-upper{
+        transform: scale(0.7);
+    }
+
     .music-dropdown-container{
         width: 100%;
     }
 
-    .apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown{
-        transform: scale(1);
+    .apple-music-dropdown,.deezer-dropdown,.soundcloud-dropdown,.youtube-dropdown,.spotify-dropdown{
+        transform: scale(0.8);
     }
 
     .music-dropdown{
-        max-height: 400px;
+        margin-top: -34px;
+        transform: scale(0.8);
+        max-height: 350px;
         box-shadow: 0 6px 6px rgba(0, 0, 0, 0.501);
     }
+
    
 }
