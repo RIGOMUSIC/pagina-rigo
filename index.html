@@ -13,6 +13,21 @@
 <body style="margin: 0%">
     <div class="main-container">
         <div class="container1">
+            <a href="https://push.fm/fl/sXVErC2y" class="out-now-container" target="_blank">
+                <div class="bestie-out-now">
+                    <p class="bestie">BESTIE</p>
+                    <p class="out-now">OUT NOW</p>
+                </div>
+                <img src="./imges/BESTIE0.jpg" alt="BESTIE Single Cover" class="cover-out-now">
+                <div class="listen-button">
+                    <p class="listen-text">LISTEN</p>
+                    <div class="listen-platforms">
+                        <img src="./imges/spotify icon0.jpg" alt="" style="border-radius: 50%;">
+                        <img src="./imges/apple-music-logo-4FBA5FADCC-seeklogo.com.png" alt="">
+                        <img src="./imges/5968860.png" alt="">
+                    </div>
+                </div>
+            </a>
             <div class="presave-container">
                 <p id="timer" class="timer"></p>
                 <div class="bestie-texto">BESTIE</div>
@@ -56,6 +71,21 @@
                     </div>
                 </div>
                 <div class="presave-mobile-container">
+                    <a href="https://push.fm/fl/sXVErC2y" class="out-now-mobile" target="_blank">
+                        <div class="bestie-out-now">
+                            <p class="bestie">BESTIE</p>
+                            <p class="out-now">OUT NOW</p>
+                        </div>
+                        <img src="./imges/BESTIE0.jpg" alt="BESTIE Single Cover" class="cover-out-now">
+                        <div class="listen-button">
+                            <p class="listen-text">LISTEN</p>
+                            <div class="listen-platforms">
+                                <img src="./imges/spotify icon0.jpg" alt="" style="border-radius: 50%;">
+                                <img src="./imges/apple-music-logo-4FBA5FADCC-seeklogo.com.png" alt="">
+                                <img src="./imges/5968860.png" alt="">
+                            </div>
+                        </div>
+                    </a>
                     <div class="presave-mobile">
                         <div class="bestie-texto" style="font-size: 40px;">BESTIE</div>
                         <img src="./imges/BESTIE0.jpg" alt="BESTIE Single Cover" class="bestie-cover" style="scale: 0.9; margin-top: -60px;">
@@ -76,18 +106,50 @@
 </html>
 
 <script>
-    var fechaCountdown = new Date("Aug 16, 2024 03:00:00").getTime();
+    var fechaCountdown = new Date("Aug 16, 2024 00:00:00").getTime();
 
     var actualizarCountdown = setInterval(function() {
 
         var horaActual = new Date().getTime();
-        var tiempoRestante= fechaCountdown - horaActual;
+        var tiempoRestante= fechaCountdown-horaActual;
+
+        if (tiempoRestante < 0) {
+            clearInterval(actualizarCountdown);
+            hidePresave();
+        }
 
         var dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
         var horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
         var segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
 
+        if (horas < 10) {
+            horas = "0"+horas;
+        }
+        if (minutos < 10) {
+            minutos = "0"+minutos;
+        }
+        if (segundos < 10) {
+            segundos = "0"+segundos;
+        }
+
         document.getElementById("timer").innerHTML = dias+ " dias "+horas + ":" + minutos + ":" + segundos;
-    })
+
+    }, 1000)
+
+    function hidePresave() {
+        var presave = document.getElementsByClassName("presave-container")[0];
+        presave.classList.add("hidden");
+        var presaveMobile = document.getElementsByClassName("presave-mobile")[0];
+        presaveMobile.classList.add("hidden");
+        setTimeout(() => {showContainer();}, 1000);
+    }
+
+    function showContainer(){
+        var outNow = document.getElementsByClassName("out-now-container")[0];
+        outNow.classList.add("shown");
+
+        var outNowMobile = document.getElementsByClassName("out-now-mobile")[0];
+        outNowMobile.classList.add("shown");
+    }
 </script>
