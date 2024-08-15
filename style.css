@@ -408,7 +408,7 @@ body {
     transform: scale(1.2);
 }
 
-@media (max-width:1705px){
+@media (max-width:1908px){
     .presave-container{
         transform: scale(1);
     }
@@ -421,7 +421,7 @@ body {
     }
 
     .out-now-container.shown:hover{
-        transform: scale(0.9);
+        transform: scale(0.8);
     }
 }
 
